@@ -5,7 +5,6 @@ metadata:
   namespace: metallb-system
 data:
   values.yaml: |-
-    # <upstream values go here>
     # Default values for metallb.
     # This is a YAML-formatted file.
     # Declare variables to be passed into your templates.
@@ -163,38 +162,38 @@ data:
           labels:
             severity: warning
 
-    # MetalLBConfigNotLoaded
-    configNotLoaded:
-      enabled: true
-      labels:
-        severity: warning
-
-    # MetalLBAddressPoolExhausted
-    addressPoolExhausted:
-      enabled: true
-      labels:
-        severity: alert
-
-    addressPoolUsage:
-      enabled: true
-      thresholds:
-        - percent: 75
+        # MetalLBConfigNotLoaded
+        configNotLoaded:
+          enabled: true
           labels:
             severity: warning
-        - percent: 85
-          labels:
-            severity: warning
-        - percent: 95
+
+        # MetalLBAddressPoolExhausted
+        addressPoolExhausted:
+          enabled: true
           labels:
             severity: alert
 
-    # MetalLBBGPSessionDown
-    bgpSessionDown:
-      enabled: true
-      labels:
-        severity: alert
+        addressPoolUsage:
+          enabled: true
+          thresholds:
+            - percent: 75
+              labels:
+                severity: warning
+            - percent: 85
+              labels:
+                severity: warning
+            - percent: 95
+              labels:
+                severity: alert
 
-    extraAlerts: []
+        # MetalLBBGPSessionDown
+        bgpSessionDown:
+          enabled: true
+          labels:
+            severity: alert
+
+        extraAlerts: []
 
     # controller contains configuration specific to the MetalLB cluster
     # controller.
