@@ -47,7 +47,7 @@ data:
     # A scheduler extender for TopoLVM
     scheduler:
       # scheduler.enabled --  If true, enable scheduler extender for TopoLVM
-      enabled: false
+      enabled: true
 
       # scheduler.args -- Arguments to be passed to the command.
       args: []
@@ -411,7 +411,7 @@ data:
     # CSI controller service
     controller:
       # controller.replicaCount -- Number of replicas for CSI controller service.
-      replicaCount: 2
+      replicaCount: 1
 
       # controller.args -- Arguments to be passed to the command.
       args: []
