@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: cert-manager
@@ -7,14 +7,16 @@ spec:
   chart:
     spec:
       chart: cert-manager
-      version: v1.6.x
+      reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
         name: jetstack
         namespace: flux-system
+      version: 1.12.x
   interval: 15m
   timeout: 5m
   releaseName: cert-manager
+  # targetNamespace: cert-manager
   valuesFrom:
   - kind: ConfigMap
     name: cert-manager-helm-chart-value-overrides
