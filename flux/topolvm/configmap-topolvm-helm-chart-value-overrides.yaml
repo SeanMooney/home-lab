@@ -516,7 +516,7 @@ data:
           emptyDir: {}
 
       podDisruptionBudget:
-        # controller.podDisruptionBudget.enabled -- Specify podDisruptionBudget enabled.
+        # controller.podDisruptionBudget.enabled -- Specify podDisruptionBudget.
         enabled: true
 
       # controller.podLabels -- Additional labels to be set on the controller pod.
